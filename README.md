@@ -7,7 +7,7 @@ Add this to `~/.config/forge/init.rhai`:
 
 ```rhai
 use_package("spell-check", #{
-  vc: "https://github.com/martial-plains/forge-plugin-spell-check",
+  vc: "https://github.com/martial-plains/spell-check.forge",
   pin: "v0.1.0",
   commands: ["spell-check-mode", "spell-check-buffer", "spell-correct-word"],
   grant: #{ directories: ["/usr/share/dict"] },
