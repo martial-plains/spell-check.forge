@@ -1,0 +1,27 @@
+[package]
+name = "forge-spell-check"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Spell checking as you type: spell-check-mode, M-$ to correct"
+
+# Built into the .wasm by the SDK: the plugin reads the system word list.
+[package.metadata.forge]
+name = "spell-check"
+
+[[package.metadata.forge.permissions.directories]]
+path = "/usr/share/dict"
+why = "the system word list (words)"
+
+# Standalone: not part of the main workspace build.
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+forge-plugin-sdk = { git = "https://github.com/martial-plains/forge" }
+
+[profile.release]
+opt-level = "s"
+lto = true
